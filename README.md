@@ -2,6 +2,9 @@
 
 The Chrome Extension to hide any post which is include "HanKuoYu" on Facebook.
 
+## Install By using Chrome Web Store
+[Install Now](https://chrome.google.com/webstore/detail/facebook-韓國瑜過濾器/aeefpiikngmlmmofdjhhcialiehpjjmf/)
+
 ## Install the Extension
 1. Clone the repo
 2. Access Chrome Extension Page
