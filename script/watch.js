@@ -4,24 +4,24 @@
 const blocklist = ['韓國瑜', '韓市長', '韓總', '國瑜', '韓流', '韓粉', '韓導']
 const templateHtml = '<div><h1 style="padding: 30px; text-align: center;">草包已被隱藏！</h1></div>'
 
-function removeElems () {
-  blocklist.map(function (text) {
-    $('#pagelet_timeline_main_column div:contains(' + '"' + text + '"' + ')').children('.userContentWrapper').html(templateHtml)
-    $('#pagelet_timeline_main_column p:contains(' + '"' + text + '"' + ')').children('.userContentWrapper').html(templateHtml)
-    $('#pagelet_timeline_main_column span:contains(' + '"' + text + '"' + ')').children('.userContentWrapper').html(templateHtml)
-    $('#pagelet_timeline_main_column a:contains(' + '"' + text + '"' + ')').children('.userContentWrapper').html(templateHtml)
+const contentFromPosts = document.querySelector('#contentArea')
+const contentFromPages = document.querySelector('#pagelet_timeline_main_column')
+const content = contentFromPosts || contentFromPages;
 
-    $('#contantArea div:contains(' + '"' + text + '"' + ')').children('.userContentWrapper').html(templateHtml)
-    $('#contantArea p:contains(' + '"' + text + '"' + ')').children('.userContentWrapper').html(templateHtml)
-    $('#contantArea span:contains(' + '"' + text + '"' + ')').children('.userContentWrapper').html(templateHtml)
-    $('#contantArea a:contains(' + '"' + text + '"' + ')').children('.userContentWrapper').html(templateHtml)
+function removeElems () {
+  const articles = content.querySelectorAll(`div[id][role="article"]`)
+
+  function hasSensitiveWordInBlocklist (article) {
+    return blocklist.some((sensitiveWord) => article.innerHTML.includes(sensitiveWord))
+  }
+
+  articles.forEach((article) => {
+    if (hasSensitiveWordInBlocklist(article)) {
+      article.innerHTML = templateHtml
+    }
   })
 }
 
-$('#pagelet_timeline_main_column').bind('DOMSubtreeModified', function (event) {
-  removeElems()
-})
-
-$('#content').bind('DOMSubtreeModified', function (event) {
+content.addEventListener('DOMSubtreeModified', function (event) {
   removeElems()
 })
