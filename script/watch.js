@@ -10,11 +10,6 @@ function removeElems () {
     $('#pagelet_timeline_main_column p:contains(' + '"' + text + '"' + ')').children('.userContentWrapper').html(templateHtml)
     $('#pagelet_timeline_main_column span:contains(' + '"' + text + '"' + ')').children('.userContentWrapper').html(templateHtml)
     $('#pagelet_timeline_main_column a:contains(' + '"' + text + '"' + ')').children('.userContentWrapper').html(templateHtml)
-
-    $('#contantArea div:contains(' + '"' + text + '"' + ')').children('.userContentWrapper').html(templateHtml)
-    $('#contantArea p:contains(' + '"' + text + '"' + ')').children('.userContentWrapper').html(templateHtml)
-    $('#contantArea span:contains(' + '"' + text + '"' + ')').children('.userContentWrapper').html(templateHtml)
-    $('#contantArea a:contains(' + '"' + text + '"' + ')').children('.userContentWrapper').html(templateHtml)
   })
 }
 
