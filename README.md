@@ -8,4 +8,4 @@ The Chrome Extension to hide any post which is include "HanKuoYu" on Facebook.
 3. Drag the Folder into Chrome
 
 ## Notice
-If you found anything that can be improve, Please give me a issue, PR is better.
+If you found anything that can be improve, Please give me an issue, PR is better.
