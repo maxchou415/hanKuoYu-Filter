@@ -22,7 +22,7 @@ function removeElems () {
   })
 }
 
-content.addEventListener('DOMContentLoaded', function (event) {
+content.addEventListener('DOMNodeInserted', function (event) {
   removeElems()
 })
 
