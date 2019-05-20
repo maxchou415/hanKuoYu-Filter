@@ -22,6 +22,10 @@ function removeElems () {
   })
 }
 
+content.addEventListener('DOMContentLoaded', function (event) {
+  removeElems()
+})
+
 content.addEventListener('DOMSubtreeModified', function (event) {
   removeElems()
 })
