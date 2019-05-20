@@ -15,7 +15,7 @@ function removeElems () {
     return blocklist.some((sensitiveWord) => article.innerHTML.includes(sensitiveWord))
   }
 
-  articles.forEach((article) => {
+  articles.map(function (article) {
     if (hasSensitiveWordInBlocklist(article)) {
       article.innerHTML = templateHtml
     }
