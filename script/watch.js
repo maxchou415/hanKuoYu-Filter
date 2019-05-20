@@ -18,10 +18,10 @@ function removeElems () {
   })
 }
 
-$('#pagelet_timeline_main_column').bind('DOMSubtreeModified', function (event) {
+$('#pagelet_timeline_main_column').bind('DOMContentLoaded DOMSubtreeModified', function (event) {
   removeElems()
 })
 
-$('#content').bind('DOMSubtreeModified', function (event) {
+$('#content').bind('DOMContentLoaded DOMSubtreeModified', function (event) {
   removeElems()
 })
