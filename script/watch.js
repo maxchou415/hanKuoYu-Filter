@@ -6,7 +6,7 @@ const templateHtml = '<div><h1 style="padding: 30px; text-align: center;">草包
 
 const contentFromPosts = document.querySelector('#contentArea')
 const contentFromPages = document.querySelector('#pagelet_timeline_main_column')
-const content = contentFromPosts || contentFromPages;
+const content = contentFromPosts || contentFromPages
 
 function removeElems () {
   const articles = content.querySelectorAll(`div[id][role="article"]`)
@@ -15,7 +15,7 @@ function removeElems () {
     return blocklist.some((sensitiveWord) => article.innerHTML.includes(sensitiveWord))
   }
 
-  articles.map(function (article) {
+  articles.forEach(function (article) {
     if (hasSensitiveWordInBlocklist(article)) {
       article.innerHTML = templateHtml
     }
